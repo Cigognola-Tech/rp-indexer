@@ -1,0 +1,16 @@
+# Used by Elastic Beanstalk Docker Compose platform branches.
+# Image URI is substituted at deploy time (${ECR_IMAGE}).
+#
+# EB writes environment properties to a sibling `.env` file. Compose does NOT
+# inject that into containers unless we reference it via env_file.
+services:
+  app:
+    image: "${ECR_IMAGE}"
+    restart: unless-stopped
+    env_file:
+      - .env
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

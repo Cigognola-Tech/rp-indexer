@@ -1,0 +1,20 @@
+.git
+.github
+.vscode
+.idea
+*.md
+!README.md
+
+# Local binaries / runtime state
+rp-indexer
+dist
+deploy
+.env
+.envrc
+*.test
+*.out
+.DS_Store
+testdb.sql
+
+# Local config with secrets — EB injects env vars instead
+indexer.toml

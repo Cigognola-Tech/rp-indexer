@@ -5,7 +5,10 @@
 *.dylib
 fabfile.py
 fabfile.pyc
-deploy/
+# Ignore local deploy artifacts; keep EB Dockerrun templates tracked
+deploy/*
+!deploy/eb/
+!deploy/eb/**
 rp-indexer
 
 # Test binary, build with `go test -c`
